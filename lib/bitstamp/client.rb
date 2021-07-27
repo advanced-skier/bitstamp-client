@@ -60,7 +60,7 @@ module Bitstamp
             handled_body = handle_body(response.body)
           rescue JSON::ParserError, Bitstamp::Exception::InvalidContent
             sleep 0.5
-            retry if (retries += 1) <= 3 && response.nil?
+            retry if (retries += 1) <= 3
           end
         else
           response = request.run
