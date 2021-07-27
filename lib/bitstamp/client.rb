@@ -59,7 +59,7 @@ module Bitstamp
             response = request.run
 
             raise 'Something went wrong with request!'
-          rescue StandardError
+          rescue JSON::ParserError
             sleep 0.5
             retry if (retries += 1) <= 3 && response.nil?
           end
