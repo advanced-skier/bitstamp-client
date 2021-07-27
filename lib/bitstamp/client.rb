@@ -58,7 +58,7 @@ module Bitstamp
             retries ||= 0
             response = request.run
 
-            raise 'Something went wrong with request!'
+            # raise 'Something went wrong with request!'
           rescue JSON::ParserError
             sleep 0.5
             retry if (retries += 1) <= 3 && response.nil?
