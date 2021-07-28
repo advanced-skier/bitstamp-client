@@ -15,7 +15,7 @@ module Bitstamp::HTTP
 
       params.merge!({destination_tag: destination_tag}) if currency_name == 'xrp'
 
-      call(request_uri("#{currency_name}_withdrawal"), 'POST', params)
+      call(request_uri('v2', "#{currency_name}_withdrawal"), 'POST', params)
     end
   end
 end
