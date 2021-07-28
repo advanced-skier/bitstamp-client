@@ -9,7 +9,7 @@ module Bitstamp
         if body.has_key?('error')
           raise ::Bitstamp::Exception::ServiceError.new(body.fetch('error'))
         elsif body.has_key?('status') && body.fetch('status') == 'error'
-          raise ::Bitstamp::Exception::ServiceError.new(body.fetch('reason'))
+          raise ::Bitstamp::Exception::ServiceError.new(body.fetch('reason').values.flatten.join(', '))
         end
       end
 
