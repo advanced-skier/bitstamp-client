@@ -4,6 +4,7 @@ module Bitstamp
 end
 
 require_relative './http/account_balance'
+require_relative './http/crypto_transactions'
 require_relative './http/deposit'
 require_relative './http/conversion_rates'
 require_relative './http/order_book'
