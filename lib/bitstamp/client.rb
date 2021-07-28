@@ -82,6 +82,7 @@ module Bitstamp
     include ::Bitstamp::HTTP::TradingPairs
     include ::Bitstamp::HTTP::Ticker
     include ::Bitstamp::HTTP::OrderBook
+    include ::Bitstamp::HTTP::CryptoTransactions
 
     def call(request_uri, method, body)
       body = params_with_signature(body)
